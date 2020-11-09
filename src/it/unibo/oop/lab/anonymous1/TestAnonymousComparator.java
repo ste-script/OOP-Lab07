@@ -64,6 +64,7 @@ public final class TestAnonymousComparator {
         dwashington.addFollowedUser("writers", mgladwell);
         dwashington.addFollowedUser("writers", ntaleb);
         final List<User> denzelUsers = dwashington.getFollowedUsers();
+        denzelUsers.sort(new AnonymousComparator());
         /*
          * Order denzel's followed users incrementally by age:
          * 
@@ -97,6 +98,7 @@ public final class TestAnonymousComparator {
         mrossi.addFollowedUser("economists", ntaleb);
         mrossi.addFollowedUser("actors i like", dwashington);
         final List<User> rossiUsers = mrossi.getFollowedUsers();
+        rossiUsers.sort(new AnonymousComparator().reversed());
         /*
          * Order rossi's followed users by age in decreasing order:
          * 
